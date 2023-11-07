@@ -30,7 +30,7 @@ import {
   SelectItem,
   useDisclosure
 } from "@nextui-org/react";
-import { useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 export default function Features() {
