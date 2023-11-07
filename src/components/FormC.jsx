@@ -18,13 +18,18 @@ export const FormC = () => {
     email: "",
     phone_number: "",
     message: "",
-    product: selected
+    product: ""
   });
 
-  const Selectedchange = (e) => {
-    // debugger;
-    setSelected(e.target.value);
+  const handleSelectChange = (e) => {
+   
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
   };
+
 
   const handleChange = (e) => {
    
@@ -51,8 +56,7 @@ export const FormC = () => {
       )
       .then(() => {
         toast("Our Team will reach out soon!");
-        // Delay the execution of handleClose using setTimeout
-        // You can adjust the delay time as needed
+        setFormData("")
       })
       .catch((error) => {
         console.error("Error posting data:", error);
@@ -76,7 +80,7 @@ export const FormC = () => {
       >
         <Card style={{ width: "55%" }}>
           <CardBody>
-            \
+        
             <form onSubmit={handleSubmit}>
               <Input
                 type="text"
@@ -110,15 +114,15 @@ export const FormC = () => {
 
               <Select
                 name="product"
-                value={selected}
-                onChange={Selectedchange}
+               
+                onChange={handleSelectChange}
                 className="p-3"
                 variant="bordered"
                 placeholder="Select product"
                 // className="max-w-xs"
               >
-                <SelectItem value="fickle">Fickle</SelectItem>
-                <SelectItem value="erp">Campuzone</SelectItem>
+                <SelectItem key="fickle" value="fickle">Fickle</SelectItem>
+                <SelectItem key="erp" value="erp">Campuzone</SelectItem>
               </Select>
               <Input
                 className="p-3"

@@ -13,10 +13,66 @@ import {
   Link
 } from "@nextui-org/react";
 import "./component.css";
+import axios from "axios";
 import { TypeAnimation } from "react-type-animation";
 import { Select, SelectItem } from "@nextui-org/react";
+import { useState } from "react";
 export const LandingCover = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [selectedValue, setSelectedValue] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    org_type: "",
+    school_name: "",
+    phone_number: "",
+    role: "",
+    selected_plan: selectedValue
+  });
+
+  console.log(selectedValue);
+
+  const handleSelectChange = (e) => {
+   
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+    axios
+      .post(
+        "https://devczerpbackend.anichadigitalinfra.com/api/services/school_form",
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      )
+      .then(() => {
+        toast("Our Team will reach out soon!");
+        // Delay the execution of handleClose using setTimeout
+        setTimeout(() => {
+          handleClose();
+        }, 1000); // You can adjust the delay time as needed
+      })
+      .catch((error) => {
+        console.error("Error posting data:", error);
+      });
+  };
   return (
     <>
       <Card
@@ -68,92 +124,113 @@ export const LandingCover = () => {
         </CardFooter>
       </Card>
       <Modal backdrop="blur" isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
-        <ModalContent>
+      <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">Get Started</ModalHeader>
-              <ModalBody>
-                <Select
-                  variant="bordered"
-                  color="secondary"
-                  label="Favorite Plan"
-                  placeholder="Select a Plan"
-                  // className="max-w-xs"
-                >
-                  <SelectItem>Free demo</SelectItem>
-                  <SelectItem>Basic plan</SelectItem>
-                  <SelectItem>Pro plan</SelectItem>
-                </Select>
-                <Input
-                  autoFocus
-                  // endContent={
-                  //   <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-                  // }
-                  label="Email"
-                  placeholder="Enter your email"
-                  variant="bordered"
-                />
-                <Input
-                  // endContent={
-                  //   <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-                  // }
-                  label="Name"
-                  placeholder="Enter your name"
-                  type="text"
-                  variant="bordered"
-                />
-                <Input
-                  // endContent={
-                  //   <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-                  // }
-                  label="School name"
-                  placeholder="Enter school your name"
-                  type="text"
-                  variant="bordered"
-                />
-                <Select
-                  variant="bordered"
+              <form onSubmit={handleSubmit}>
+                <ModalHeader className="flex flex-col gap-1">
+                  Get Started
+                </ModalHeader>
+                <ModalBody>
+                  <Select
+                    name="selected_plan"
+                    value={selectedValue}
+                    onChange={handleSelectChange}
+                    variant="bordered"
+                    color="secondary"
+                    label="Favorite Plan"
+                    placeholder="Select a Plan"
+                    // className="max-w-xs"
+                  >
+                    <SelectItem key="Demo" value="Demo">
+                      Free demo
+                    </SelectItem>
+                    <SelectItem key="Basic" value="Basic">
+                      Basic plan
+                    </SelectItem>
+                    <SelectItem key="Pro" value="Pro">
+                      Pro plan
+                    </SelectItem>
+                  </Select>
+
+                  <Input
+                    // endContent={
+                    //   <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                    // }
+                    className="form-control"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    label="Name"
+                    placeholder="Enter your name"
+                    type="text"
+                    variant="bordered"
+                  />
+                  <Input
+                    // endContent={
+                    //   <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                    // }
+                    name="school_name"
+                    value={formData.school_name}
+                    onChange={handleChange}
+                    label="School name"
+                    placeholder="Enter school your name"
+                    type="text"
+                    variant="bordered"
+                  />
+                  <Select
+                    name="org_type"
+                    value={formData.org_type}
+                    onChange={handleSelectChange
+                    }
+                    variant="bordered"
+                    placeholder="Organization type"
+                    // className="max-w-xs"
+                  >
+                    <SelectItem key="Group of Schools" value="Group of Schools">
+                      Group of schools
+                    </SelectItem>
+                    <SelectItem key="Independent School" value="Independent School">
+                      Independent school
+                    </SelectItem>
+                  </Select>
+                  <Input
+                    // endContent={
+                    //   <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                    // }
+                    label="Mobile number"
+                    placeholder="Ex:+917380860567"
+                    type="text"
+                    variant="bordered"
+                    name="phone_number"
+                    value={formData.phone_number}
+                    onChange={handleChange}
+                  />
+                  <Select
+                    name="role"
                  
-                  placeholder="Organization type"
-                  // className="max-w-xs"
-                >
-                  <SelectItem>Group of schools</SelectItem>
-                  <SelectItem>Independent school</SelectItem>
-                  
-                </Select>
-                <Input
-                  // endContent={
-                  //   <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-                  // }
-                  label="Mobile number"
-                  placeholder="Enter mobile number"
-                  type="text"
-                  variant="bordered"
-                />
-                <Select
-                  variant="bordered"
-                 
-                  placeholder="Your role in the school"
-                  // className="max-w-xs"
-                >
-                  <SelectItem>Teacher</SelectItem>
-                  <SelectItem>Student</SelectItem>
-                  <SelectItem>School admin</SelectItem>
-                  <SelectItem>Principal</SelectItem>
-                  <SelectItem>School owner</SelectItem>
-                  <SelectItem>Parent</SelectItem>
-                  
-                </Select>
-               
-              </ModalBody>
-              <ModalFooter>
-                <Button color="default" variant="flat" onPress={onClose}>
-                  Close
-                </Button>
-                <Button color="secondary" onPress={onClose}>
-                  Send
-                </Button>
-              </ModalFooter>
+                    onChange={handleSelectChange}
+                    variant="bordered"
+                    placeholder="Your role in the school"
+                    // className="max-w-xs"
+                  >
+                    <SelectItem key="Teacher" value="Teacher">Teacher</SelectItem>
+                    <SelectItem key="Student" value="Student">Student</SelectItem>
+                    <SelectItem key="SchoolAdmin" value="SchoolAdmin">School admin</SelectItem>
+                    <SelectItem key="Principal" value="Principal">Principal</SelectItem>
+                    <SelectItem key="SchoolOwner" value="SchoolOwner">School owner</SelectItem>
+                    <SelectItem key="Parent" value="Parent">Parent</SelectItem>
+                  </Select>
+                </ModalBody>
+                <ModalFooter>
+                  <Button color="default" variant="flat" onPress={onClose}>
+                    Close
+                  </Button>
+                  <Button type="submit" color="secondary" onPress={onClose}>
+                    Send
+                  </Button>
+                </ModalFooter>
+              </form>
             </>
           )}
         </ModalContent>

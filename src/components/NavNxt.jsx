@@ -203,7 +203,7 @@ export default function NavNxt() {
             <p
               onClick={() => {
                 navigate(item.path);
-                setIsMenuOpen("Close menu");
+                setIsMenuOpen(false);
               }}
               className="w-full"
             >
