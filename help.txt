@@ -1,0 +1,10 @@
+sudo docker build -t campuzone_site_v2:test .
+
+
+# -----------------------
+sudo docker push anichadigitalinfra/campuzone_site_v2: web_site_$BUILD_NUMBER
+
+sudo docker service update --image anichadigitalinfra/campuzone_site_v2: web_site_$BUILD_NUMBER campuzone || sudo docker service create --replicas 1 -p 8081:80 --name campuzone_news_web_site_srvc --with-registry-auth anichadigitalinfra/campuzone_news_web_site: web_site_$BUILD_NUMBER
+
+
+
