@@ -12,6 +12,8 @@ import {
   SelectItem,
   useDisclosure
 } from "@nextui-org/react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Vector } from "../components/FeatureIcons";
 import axios from "axios";
 export const Plans = () => {
@@ -28,6 +30,16 @@ export const Plans = () => {
     role: "",
     selected_plan: selectedValue
   });
+
+  console.log(selectedValue);
+
+  const handlePlanSelection = (plan) => {
+    setSelectedValue(plan);
+    setFormData((prevData) => ({
+      ...prevData,
+      selected_plan: plan
+    }));
+  };
 
   console.log(selectedValue);
 
@@ -48,6 +60,8 @@ export const Plans = () => {
     }));
   };
 
+ 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
@@ -62,14 +76,21 @@ export const Plans = () => {
         }
       )
       .then(() => {
-        toast("Our Team will reach out soon!");
-        // Delay the execution of handleClose using setTimeout
-        setTimeout(() => {
-          handleClose();
-        }, 1000); // You can adjust the delay time as needed
+        setFormData({
+          name: "",
+          org_type: "",
+          school_name: "",
+          phone_number: "",
+          role: "",
+          selected_plan: ""
+        });
+      
+      }).then(()=>{
+        toast.success("Our Team will reach out soon!");
       })
       .catch((error) => {
-        console.error("Error posting data:", error);
+       
+        toast.error("An error occurred. Please try again.");
       });
   };
 
@@ -81,6 +102,7 @@ export const Plans = () => {
         today and discover the benefits of a comprehensive solution tailored to
         meet your school's unique requirements.
       </p>
+      <ToastContainer/>
       <div
         style={{ marginBottom: "10vh" }}
         className="flex flex-wrap justify-center"
@@ -162,7 +184,14 @@ export const Plans = () => {
 
           <div className="planbtn flex flex-wrap justify-center items-end">
             {" "}
-            <Button onPress={onOpen} color="default" variant="shadow">
+            <Button
+              onPress={() => {
+                onOpen();
+                handlePlanSelection("Demo");
+              }}
+              color="default"
+              variant="shadow"
+            >
               Get Started
             </Button>
           </div>
@@ -242,7 +271,10 @@ export const Plans = () => {
           <div className="planbtn flex flex-wrap justify-center items-end">
             {" "}
             <Button
-              onPress={onOpen}
+              onPress={() => {
+                onOpen();
+                handlePlanSelection("Basic");
+              }}
               style={{ background: "#F66CFF" }}
               variant="shadow"
             >
@@ -291,7 +323,10 @@ export const Plans = () => {
           <div className="planbtn flex flex-wrap justify-center items-end">
             {" "}
             <Button
-              onPress={onOpen}
+              onPress={() => {
+                onOpen();
+                handlePlanSelection("Pro");
+              }}
               style={{ background: "#B86CFF" }}
               variant="shadow"
             >
@@ -321,17 +356,18 @@ export const Plans = () => {
                     variant="bordered"
                     color="secondary"
                     label="Favorite Plan"
-                    placeholder="Select a Plan"
+                    placeholder={selectedValue}
+
                     // className="max-w-xs"
                   >
                     <SelectItem key="Demo" value="Demo">
-                      Free demo
+                      Demo
                     </SelectItem>
                     <SelectItem key="Basic" value="Basic">
-                      Basic plan
+                      Basic
                     </SelectItem>
                     <SelectItem key="Pro" value="Pro">
-                      Pro plan
+                      Pro
                     </SelectItem>
                   </Select>
 
@@ -424,6 +460,7 @@ export const Plans = () => {
                   <Button type="submit" color="secondary" onPress={onClose}>
                     Send
                   </Button>
+               
                 </ModalFooter>
               </form>
             </>

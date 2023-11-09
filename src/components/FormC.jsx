@@ -10,6 +10,8 @@ import {
 } from "@nextui-org/react";
 import "../components/component.css";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const FormC = () => {
   const [selected, setSelected] = useState("");
@@ -54,16 +56,17 @@ export const FormC = () => {
           }
         }
       )
-      .then(() => {
-        toast("Our Team will reach out soon!");
-        setFormData("")
+      .then(()=>{
+        toast.success("Our Team will reach out soon!");
       })
       .catch((error) => {
-        console.error("Error posting data:", error);
+       
+        toast.error("An error occurred. Please check the form again.");
       });
   };
   return (
     <>
+    <ToastContainer/>
       <p className="helptitle text-center p-4">Connect with us</p>
       <p style={{fontSize:"24px",fontWeight:"500",color:"#de6baf"}} className="text-center p-4">support@campuzone.com</p>
       <p
@@ -82,13 +85,14 @@ export const FormC = () => {
         
             <form onSubmit={handleSubmit}>
               <Input
+              required
                 type="text"
                 className="p-3"
                 autoFocus
                 // endContent={
                 //   <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
                 // }
-                label="Name"
+                label="Name*"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
@@ -97,6 +101,7 @@ export const FormC = () => {
               />
 
               <Input
+              required
                 type="email"
                 className="p-3"
                 autoFocus
@@ -106,14 +111,14 @@ export const FormC = () => {
                 // endContent={
                 //   <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
                 // }
-                label="Email"
+                label="Email*"
                 placeholder="Enter your email"
                 variant="bordered"
               />
 
               <Select
                 name="product"
-               
+                required
                 onChange={handleSelectChange}
                 className="p-3"
                 variant="bordered"
@@ -124,6 +129,7 @@ export const FormC = () => {
                 <SelectItem key="erp" value="erp">Campuzone</SelectItem>
               </Select>
               <Input
+              required
                 className="p-3"
                 // endContent={
                 //   <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
@@ -131,8 +137,8 @@ export const FormC = () => {
                 name="phone_number"
                 value={formData.phone_number}
                 onChange={handleChange}
-                label="Mobile number"
-                placeholder="Enter mobile number"
+                label="Mobile number*"
+                placeholder="Ex:+917380860567"
                 type="text"
                 variant="bordered"
               />

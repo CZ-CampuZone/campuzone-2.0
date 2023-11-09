@@ -32,7 +32,8 @@ import {
 } from "@nextui-org/react";
 import React, { useState } from "react";
 import axios from "axios";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function Features() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [selectedValue, setSelectedValue] = useState("");
@@ -45,7 +46,7 @@ export default function Features() {
     selected_plan: selectedValue
   });
 
-  console.log(selectedValue);
+  
 
   const handleSelectChange = (e) => {
 
@@ -67,7 +68,7 @@ export default function Features() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    
     axios
       .post(
         "https://devczerpbackend.anichadigitalinfra.com/api/services/school_form",
@@ -79,16 +80,23 @@ export default function Features() {
         }
       )
       .then(() => {
-        toast("Our Team will reach out soon!");
-        // Delay the execution of handleClose using setTimeout
-        setTimeout(() => {
-          handleClose();
-        }, 1000); // You can adjust the delay time as needed
+        setFormData({
+          name: "",
+          org_type: "",
+          school_name: "",
+          phone_number: "",
+          role: "",
+          selected_plan: ""
+        });
+      
+      }).then(()=>{
+        toast.success("Our Team will reach out soon!");
       })
       .catch((error) => {
-        console.error("Error posting data:", error);
+       
+        toast.error("An error occurred. Please try again.");
       });
-  };
+    }
   const allCards = [
     {
       svg: <Role />,
@@ -189,6 +197,7 @@ export default function Features() {
 
   return (
     <>
+    <ToastContainer/>
       <>
         <p className="helptitle text-center p-4">
           Check all full-fledged <br />

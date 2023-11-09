@@ -34,6 +34,10 @@ export default function NavNxt() {
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
   const menuItems = [
     {
+      name: "Home",
+      path: "/"
+    },
+    {
       name: "Features",
       path: "campuzone-features"
     },
@@ -45,6 +49,7 @@ export default function NavNxt() {
       name: "Connect",
       path: "campuzone-connect"
     }
+    
   ];
 
   const icons = {
@@ -90,6 +95,7 @@ export default function NavNxt() {
           style={{ cursor: "pointer" }}
           onClick={() => {
             navigate("/");
+            window.scrollTo(0, 0);
           }}
           className="row"
         >
@@ -105,10 +111,11 @@ export default function NavNxt() {
             <NavbarItem
               onClick={() => {
                 navigate("/");
+                window.scrollTo(0, 0);
               }}
               isActive
             >
-              <p style={{ color: "#D33591", cursor: "pointer",fontSize:"18px" }}>Home</p>
+              <p style={{ color: "#D33591", cursor: "pointer",fontSize:"16px",":hover":{color:"#7828C8"} }}>Home</p>
             </NavbarItem>
             {/* <Dropdown>
               <NavbarItem>
@@ -177,30 +184,33 @@ export default function NavNxt() {
             <NavbarItem
               onClick={() => {
                 navigate("campuzone-features");
+                window.scrollTo(0, 0);
               }}
               isActive
             >
-              <p style={{ color: "#D33591", cursor: "pointer",fontSize:"18px" }}>Features</p>
+              <p style={{ color: "#D33591", cursor: "pointer",fontSize:"16px" }}>Features</p>
             </NavbarItem>
             <NavbarItem
               onClick={() => {
                 navigate("campuzone-plans");
+                window.scrollTo(0, 0);
               }}
               isActive
             >
-              <p style={{ color: "#D33591", cursor: "pointer",fontSize:"18px" }}>Plans</p>
+              <p style={{ color: "#D33591", cursor: "pointer",fontSize:"16px" }}>Plans</p>
             </NavbarItem>
             <NavbarItem
               onClick={() => {
                 navigate("campuzone-connect");
+                window.scrollTo(0, 0);
               }}
               isActive
             >
-              <p style={{ color: "#D33591", cursor: "pointer",fontSize:"18px" }}>Connect</p>
+              <p style={{ color: "#D33591", cursor: "pointer",fontSize:"16px" }}>Connect</p>
             </NavbarItem>
             <NavbarItem>
               <Link
-                style={{ color: "#7828C8", cursor: "pointer",fontSize:"18px" }}
+                style={{ color: "#7828C8", cursor: "pointer",fontSize:"16px" }}
                 target="_blank"
                 href="https://news.campuzone.com/"
               >
@@ -225,7 +235,8 @@ export default function NavNxt() {
                 <p style={{ ":hover": { color: "#D33591" },fontSize:"20px"}}
                   onClick={() => {
                     navigate(item.path);
-                    setIsMenuOpen(false); // Close the navbar
+                    setIsMenuOpen(false); 
+                    window.scrollTo(0, 0);// Close the navbar
                   }}
                   className="w-full"
                 >

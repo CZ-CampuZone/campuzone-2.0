@@ -1,6 +1,6 @@
 import React from "react";
 export const AcmeLogo = () => (
-<svg width="41.3" height="42" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="45" height="45.77" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M18.6352 10.1014L37.5052 20.5564V11.5039L20.4202 2.06891C8.28217 4.51691 2.61267 15.4139 1.29517 20.5564L18.6352 10.1014Z" fill="url(#paint0_linear_158_99)" stroke="black" stroke-width="1.02" stroke-linejoin="round"/>
 <path d="M8.81765 44.3989C1.06565 38.8909 0.572648 26.3789 1.29515 20.8114L18.5077 9.84641L26.0302 14.1814L8.81765 25.6564V44.3989Z" fill="url(#paint1_linear_158_99)" stroke="black" stroke-width="1.02" stroke-linejoin="round"/>
 <path d="M16.2127 39.4264V20.9389L8.94519 25.6564V44.3989C17.6152 53.2729 30.3227 51.9214 35.5927 50.1364L16.2127 39.4264Z" fill="url(#paint2_linear_158_99)" stroke="black" stroke-width="1.02" stroke-linejoin="round"/>

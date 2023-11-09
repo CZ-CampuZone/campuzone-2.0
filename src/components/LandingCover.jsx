@@ -14,6 +14,8 @@ import {
 } from "@nextui-org/react";
 import "./component.css";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { TypeAnimation } from "react-type-animation";
 import { Select, SelectItem } from "@nextui-org/react";
 import { useState } from "react";
@@ -29,7 +31,7 @@ export const LandingCover = () => {
     selected_plan: selectedValue
   });
 
-  console.log(selectedValue);
+
 
   const handleSelectChange = (e) => {
    
@@ -51,7 +53,7 @@ export const LandingCover = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+   
     axios
       .post(
         "https://devczerpbackend.anichadigitalinfra.com/api/services/school_form",
@@ -63,22 +65,30 @@ export const LandingCover = () => {
         }
       )
       .then(() => {
-        toast("Our Team will reach out soon!");
-        // Delay the execution of handleClose using setTimeout
-        setTimeout(() => {
-          handleClose();
-        }, 1000); // You can adjust the delay time as needed
+        setFormData({
+          name: "",
+          org_type: "",
+          school_name: "",
+          phone_number: "",
+          role: "",
+          selected_plan: ""
+        });
+      
+      }).then(()=>{
+        toast.success("Our Team will reach out soon!");
       })
       .catch((error) => {
-        console.error("Error posting data:", error);
+       
+        toast.error("An error occurred. Please try again.");
       });
   };
   return (
     <>
+    <ToastContainer/>
       <Card
         style={{
           background: "linear-gradient(108deg, #6A3991 8.77%, #F23492 114.02%)",
-          height: "60vh",
+          height: "auto",
           borderRadius: "0px"
         }}
         className="border-none"

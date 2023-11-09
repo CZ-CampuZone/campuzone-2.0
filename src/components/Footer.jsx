@@ -142,6 +142,7 @@ export const Footer = () => {
             <p
               onClick={() => {
                 navigate("campuzone-features");
+                window.scrollTo(0, 0);
               }}
               style={{ color: "#d9519f", cursor: "pointer" }}
             >
@@ -152,6 +153,7 @@ export const Footer = () => {
             <p
               onClick={() => {
                 navigate("campuzone-plans");
+                window.scrollTo(0, 0);
               }}
               style={{ color: "#d9519f", cursor: "pointer" }}
             >
@@ -162,6 +164,7 @@ export const Footer = () => {
             <p
               onClick={() => {
                 navigate("campuzone-connect");
+                window.scrollTo(0, 0);
               }}
               style={{ color: "#d9519f", cursor: "pointer" }}
             >
@@ -268,7 +271,7 @@ export const Footer = () => {
           style={{ color: " #d9519f" }}
           class="mt-8 p-3 text-base leading-6 text-center text-gray-400"
         >
-          © 2023 CAMPUZONE. All rights reserved.
+          © 2023 CAMPUZONE. All rights reserved. ANICHA DIGITAL INFRASTRUCTURE
         </p>
       </div>
     </>
