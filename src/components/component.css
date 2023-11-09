@@ -173,7 +173,7 @@ font-size: 20px;
 }
 
 .image-card {
-  background:   #d5aeff;
+  background:   #f1e7ff;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -209,7 +209,7 @@ font-size: 20px;
 
 .image-card1 {
   display: flex;
-  background:   #ffaefb;
+  background:   #ffe9f8;
   flex-direction: row;
   align-items: center;
   max-width: 480px;
@@ -242,7 +242,7 @@ font-size: 20px;
 /* ------------------------------------------------------------------------- */
 .image-card2 {
   display: flex;
-  background:   #ffaefb;
+  background:   #ffe9f8;
   flex-direction: row;
   align-items: center;
   max-width: 480px;
@@ -277,7 +277,7 @@ font-size: 20px;
 /* -------------------------------------------------------------------------------------- */
 .image-card3 {
   display: flex;
-  background:   #d5aeff;
+  background:   #f1e7ff;
   flex-direction: row;
   align-items: center;
   max-width: 480px;
