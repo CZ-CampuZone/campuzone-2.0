@@ -203,6 +203,16 @@ export default function Features() {
           Check all full-fledged <br />
           Campuzone features
         </p>
+        <div className="flex flex-wrap justify-center p-4">
+          {" "}
+          <Button
+            onPress={onOpen}
+            variant="shadow"
+            style={{background: "#B86CFF", color: "#fff", fontWeight: "500" }}
+          >
+            Get Started
+          </Button>
+        </div>
         <div className="flex flex-wrap justify-center">
           {allCards.map((item, index) => (
             <>
@@ -340,16 +350,7 @@ export default function Features() {
           )}
         </ModalContent>
         </Modal>
-        <div className="flex flex-wrap justify-center p-4">
-          {" "}
-          <Button
-            onPress={onOpen}
-            variant="shadow"
-            style={{ background: "#d7509d", color: "#fff", fontWeight: "500" }}
-          >
-            Get Started
-          </Button>
-        </div>
+      
       </>
     </>
   );

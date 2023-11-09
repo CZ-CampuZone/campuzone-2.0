@@ -189,7 +189,7 @@ export const Plans = () => {
                 onOpen();
                 handlePlanSelection("Demo");
               }}
-              color="default"
+            style={{background:"#636365",color:"#fff"}}
               variant="shadow"
             >
               Get Started
@@ -275,7 +275,7 @@ export const Plans = () => {
                 onOpen();
                 handlePlanSelection("Basic");
               }}
-              style={{ background: "#F66CFF" }}
+              style={{ background: "#913F97",color:"#fff" }}
               variant="shadow"
             >
               Get Started
@@ -327,7 +327,7 @@ export const Plans = () => {
                 onOpen();
                 handlePlanSelection("Pro");
               }}
-              style={{ background: "#B86CFF" }}
+              style={{ background: "#613A86",color:"#fff" }}
               variant="shadow"
             >
               Get Started
