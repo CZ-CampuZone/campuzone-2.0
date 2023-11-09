@@ -190,7 +190,7 @@ export default function Features() {
   return (
     <>
       <>
-        <p className="featuretitle text-center p-4">
+        <p className="helptitle text-center p-4">
           Check all full-fledged <br />
           Campuzone features
         </p>

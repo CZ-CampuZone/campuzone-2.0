@@ -30,6 +30,7 @@ import { useNavigate } from "react-router-dom";
 export default function NavNxt() {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  console.log(isMenuOpen);
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
   const menuItems = [
     {
@@ -93,13 +94,23 @@ export default function NavNxt() {
           className="row"
         >
           <AcmeLogo />
-          {/* <div className="navtitle"><Campu/></div> */}
+          <div className="navtitle">
+            <Campu />
+          </div>
         </NavbarBrand>
       </NavbarContent>
       {windowWidth > 768 && (
         <>
           <NavbarContent className=" sm:flex gap-4" justify="center">
-            <Dropdown>
+            <NavbarItem
+              onClick={() => {
+                navigate("/");
+              }}
+              isActive
+            >
+              <p style={{ color: "#D33591", cursor: "pointer",fontSize:"18px" }}>Home</p>
+            </NavbarItem>
+            {/* <Dropdown>
               <NavbarItem>
                 <DropdownTrigger>
                   <Button
@@ -162,14 +173,14 @@ export default function NavNxt() {
                   Student Information Management
                 </DropdownItem>
               </DropdownMenu>
-            </Dropdown>
+            </Dropdown> */}
             <NavbarItem
               onClick={() => {
                 navigate("campuzone-features");
               }}
               isActive
             >
-              <p style={{ color: "#D33591", cursor: "pointer" }}>Features</p>
+              <p style={{ color: "#D33591", cursor: "pointer",fontSize:"18px" }}>Features</p>
             </NavbarItem>
             <NavbarItem
               onClick={() => {
@@ -177,7 +188,7 @@ export default function NavNxt() {
               }}
               isActive
             >
-              <p style={{ color: "#D33591", cursor: "pointer" }}>Plans</p>
+              <p style={{ color: "#D33591", cursor: "pointer",fontSize:"18px" }}>Plans</p>
             </NavbarItem>
             <NavbarItem
               onClick={() => {
@@ -185,33 +196,57 @@ export default function NavNxt() {
               }}
               isActive
             >
-              <p style={{ color: "#D33591", cursor: "pointer" }}>Connect</p>
+              <p style={{ color: "#D33591", cursor: "pointer",fontSize:"18px" }}>Connect</p>
+            </NavbarItem>
+            <NavbarItem>
+              <Link
+                style={{ color: "#7828C8", cursor: "pointer",fontSize:"18px" }}
+                target="_blank"
+                href="https://news.campuzone.com/"
+              >
+                News
+              </Link>
             </NavbarItem>
           </NavbarContent>
         </>
       )}
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button as={Link} color="secondary" href="#" variant="shadow">
+          <Button as={Link} color="secondary" target="_blank" href="https://devczerp.anichadigitalinfra.com/" variant="shadow">
             Sign Up
           </Button>
         </NavbarItem>
       </NavbarContent>
-      <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <p
-              onClick={() => {
-                navigate(item.path);
-                setIsMenuOpen(false);
-              }}
-              className="w-full"
-            >
-              {item.name}
-            </p>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
+      {isMenuOpen && (
+        <NavbarMenu>
+          <>
+            {menuItems.map((item, index) => (
+              <NavbarMenuItem key={`${item}-${index}`}>
+                <p style={{ ":hover": { color: "#D33591" },fontSize:"20px"}}
+                  onClick={() => {
+                    navigate(item.path);
+                    setIsMenuOpen(false); // Close the navbar
+                  }}
+                  className="w-full"
+                >
+                  {item.name}
+                </p>
+              </NavbarMenuItem>
+            ))}
+
+            <NavbarMenuItem>
+              <Link
+                style={{ color: "#D33591", cursor: "pointer" }}
+                target="_blank"
+                href="https://news.campuzone.com/"
+              >
+                News
+              </Link>
+            </NavbarMenuItem>
+           
+          </>
+        </NavbarMenu>
+      )}
     </Navbar>
   );
 }

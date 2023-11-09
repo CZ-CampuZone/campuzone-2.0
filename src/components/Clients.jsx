@@ -9,7 +9,7 @@ export const Clients = () => {
   const ClientArr = [smartschool, veeta, kalai, Dbtr, Aathi];
   return (
     <div>
-      <p className="featuretitle text-center p-4">Precious Clients</p>
+      <p className="helptitle text-center p-2">Precious Clients</p>
       <div className="flex flex-wrap justify-center">
         {" "}
         {ClientArr.map((item, index) => (

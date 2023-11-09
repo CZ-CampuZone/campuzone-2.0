@@ -5,7 +5,7 @@
 }
 
 .navtitle {
-  margin-left: 5px;
+  /* margin-left: 5px; */
 }
 
 .subtitle {
@@ -15,9 +15,9 @@
 }
 
 .marqTitle {
-  font-size: 20px;
+  font-size: 36px;
   font-weight: 500;
-  color: #75706d;
+  color: #6e6e6e;
   margin-top: 10px;
 }
 
@@ -29,6 +29,7 @@
 }
 
 .fzcol1 {
+
   margin-top: 12px;
   margin: 15px;
   height: 250px;
@@ -43,20 +44,42 @@
   background: #ffe9f8;
 }
 
-.facttxt {
-  text-align: center;
-  font-size: 26px;
-  font-weight: 500;
-  padding: 5px;
+.sclimg {
+  width: 186px;
+  height: 220px;
+  left: 258px;
+  top: -205px;
+  
 }
 
-.factparentImg {
-  margin-top: -20px;
+.teacher{
+  width: 245px;
+  height: 209px;
+  left: 200px;
+  top: -190px;
   filter: grayscale(100%);
 }
 
-.factparenttxt {
-  padding: 10px;
+.studentimg{
+  width: 260px;
+  height: auto;
+  left: 200px;
+  top: -196px;
+  filter: grayscale(100%);
+}
+
+.parentimg{
+  width: 220px;
+  height: auto;
+  left: 225px;
+  top: -215px;
+  filter: grayscale(100%);
+}
+
+.scltxt{
+margin-right: 200px;
+padding: 24px;
+font-size: 20px;
 }
 
 .accordion {
@@ -109,10 +132,26 @@
   margin-top: 10%;
 }
 
+.badgetex{
+  font-size: 54px;
+  font-weight: 600;
+  color: #75706d;
+}
+
 .featuretitle {
   font-size: 54px;
   font-weight: 600;
   color: #75706d;
+}
+
+.helptitle {
+  font-size: 54px;
+  font-weight: 600;
+  color: #75706d;
+}
+.helpp {
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .helpbox {
@@ -127,6 +166,10 @@
   height: 108px;
   background: #e477ff;
   filter: blur(352.5px);
+}
+
+.formC {
+  width: 55%;
 }
 
 @media only screen and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
@@ -147,7 +190,7 @@
   }
 
   .marqTitle {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 500;
     color: #75706d;
     margin-top: 10px;
@@ -175,17 +218,23 @@
     background: #ffe9f8;
   }
 
-  .facttxt {
-    text-align: center;
-    font-size: 26px;
-    font-weight: 500;
-    padding: 5px;
+  .helptitle {
+    font-size: 36px;
+    font-weight: 600;
+    color: #75706d;
   }
 
-  .factparentImg {
-    margin-top: -20px;
-    filter: grayscale(100%);
+  .helpp {
+    font-size: 18px;
+    font-weight: 500;
   }
+
+  .badgetex{
+    font-size: 48px;
+    font-weight: 600;
+    color: #75706d;
+  }
+
   .accordionhead {
     text-align: center;
     font-size: 44px;
@@ -194,7 +243,8 @@
   }
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   .title {
     font-size: 36px;
     font-weight: 700;
@@ -209,6 +259,17 @@
     font-size: 20px;
     font-weight: 500;
     color: #ced3e6;
+  }
+
+  .helptitle {
+    font-size: 28px;
+    font-weight: 600;
+    color: #75706d;
+  }
+
+  .helpp {
+    font-size: 16px;
+    font-weight: 500;
   }
 
   .marqTitle {
@@ -226,37 +287,68 @@
   }
 
   .fzcol1 {
+
     margin-top: 12px;
     margin: 15px;
-    height: 270px;
+    height: 225px;
     width: 450px;
     background: #f1e7ff;
   }
   .fzcol2 {
     margin-top: 12px;
     margin: 15px;
-    height: 270px;
+    height: 225px;
     width: 450px;
     background: #ffe9f8;
   }
-
-  .facttxt {
-    text-align: center;
-    font-size: 26px;
-    font-weight: 500;
-    padding: 5px;
+  
+  .sclimg {
+    width: 170px;
+    height: auto;
+    left: 212px;
+    top: -163px;
+    
   }
+  
+  .teacher{
+    width: 236px;
+    height: auto;
+    left: 160px;
+    top: -160px;
+    filter: grayscale(100%);
+  }
+  
 
-  .factparentImg {
-    width: 90%;
-    margin-left: 30px;
-    margin-top: -5px;
+  .studentimg{
+    width: 240px;
+    height: auto;
+    left: 167px;
+    top: -146px;
     filter: grayscale(100%);
   }
 
-  .factparenttxt {
-    padding: 0px;
+  
+.parentimg{
+  width: 210px;
+  height: auto;
+  left: 173px;
+  top: -173px;
+  filter: grayscale(100%);
+}
+
+
+  .scltxt{
+  margin-right: 168px;
+  padding: 22px;
+  font-size: 14px;
   }
+
+  .badgetex{
+    font-size: 36px;
+    font-weight: 600;
+    color: #75706d;
+  }
+
   .textanim {
     font-size: 32px;
     /* font-weight: 700; */
@@ -269,4 +361,47 @@
     font-weight: 600;
     margin-bottom: 2rem;
   }
+
+  .formC {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-device-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
+ 
+  .sclimg {
+    width: 170px;
+    height: auto;
+    left: 173px;
+    top: -193px;
+    
+  }
+
+   
+  .teacher{
+    width: 220px;
+    height: auto;
+    left: 123px;
+    top: -187px;
+    filter: grayscale(100%);
+  }
+
+  
+  .studentimg{
+    width: 214px;
+    height: auto;
+    left: 143px;
+    top: -165px;
+    filter: grayscale(100%);
+  }
+
+  .parentimg{
+    width: 210px;
+    height: auto;
+    left: 136px;
+    top: -214px;
+    filter: grayscale(100%);
+  }
+  
+
 }

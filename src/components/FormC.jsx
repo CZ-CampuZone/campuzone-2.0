@@ -64,21 +64,20 @@ export const FormC = () => {
   };
   return (
     <>
-      <p className="featuretitle text-center p-4">Connect with us</p>
+      <p className="helptitle text-center p-4">Connect with us</p>
+      <p style={{fontSize:"24px",fontWeight:"500",color:"#de6baf"}} className="text-center p-4">support@campuzone.com</p>
       <p
-        style={{ fontSize: "20px", marginLeft: "50px", marginRight: "50px" }}
+        style={{ fontSize: "20px", marginLeft: "50px", marginRight: "50px",textAlign:"center" }}
         className=" p-5 text-center"
       >
         Our school ERP software is the best in India that enables you to deliver
-        excellent digital experiences to your students, parents, and faculty. In
-        addition, we are the fastest growing digital marketing company for
-        educational institutions.
+        excellent digital experiences to your students, parents, and faculty. 
       </p>
       <div
         style={{ marginBottom: "30px" }}
         className="flex flex-wrap justify-center "
       >
-        <Card style={{ width: "55%" }}>
+        <Card className="formC">
           <CardBody>
         
             <form onSubmit={handleSubmit}>

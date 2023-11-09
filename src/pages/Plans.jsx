@@ -32,7 +32,6 @@ export const Plans = () => {
   console.log(selectedValue);
 
   const handleSelectChange = (e) => {
-
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -257,49 +256,13 @@ export const Plans = () => {
             <div className="flex flex-wrap justify-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="37"
-                height="56"
-                viewBox="0 0 37 56"
+                width="39"
+                height="49"
+                viewBox="0 0 39 49"
                 fill="none"
               >
                 <path
-                  d="M18.457 2.72836V54.9254"
-                  stroke="#3B303D"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                ></path>
-                <path
-                  d="M29.6421 11.4279C27.9851 13.4992 23.4282 18.3875 18.457 21.3702"
-                  stroke="#3B303D"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                ></path>
-                <path
-                  d="M33.3705 23.8557C31.1611 26.9627 25.0852 34.2952 18.457 38.7692"
-                  stroke="#3B303D"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                ></path>
-                <path
-                  d="M7.27194 11.4279C8.92899 13.4992 13.4859 18.3875 18.457 21.3702"
-                  stroke="#3B303D"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                ></path>
-                <path
-                  d="M3.54358 23.8557C5.75298 26.9627 11.8288 34.2952 18.457 38.7692"
-                  stroke="#3B303D"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                ></path>
-                <path
-                  d="M18.4564 1.48557C13.071 3.97114 2.05158 12.6707 1.05735 27.5841C0.0631204 42.4976 12.2424 46.2259 18.4564 46.2259"
-                  stroke="#3B303D"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                ></path>
-                <path
-                  d="M18.4577 1.48557C23.8431 3.97114 34.8625 12.6707 35.8567 27.5841C36.8509 42.4976 24.6716 46.2259 18.4577 46.2259"
+                  d="M24.3668 2.33528L2.15864 24.3924C1.37161 25.174 1.92517 26.5169 3.03442 26.5169H15.7771C16.7448 26.5169 17.3412 27.5741 16.8408 28.4023L6.57652 45.3932C5.84661 46.6014 7.3763 47.8979 8.44855 46.9798L37.2347 22.333C38.1114 21.5824 37.5805 20.1462 36.4264 20.1462H22.3061C21.4475 20.1462 20.8476 19.2963 21.1351 18.4872L26.4136 3.6332C26.8564 2.38712 25.305 1.40338 24.3668 2.33528Z"
                   stroke="#3B303D"
                   stroke-width="2"
                   stroke-linecap="round"
@@ -400,8 +363,7 @@ export const Plans = () => {
                   <Select
                     name="org_type"
                     value={formData.org_type}
-                    onChange={handleSelectChange
-                    }
+                    onChange={handleSelectChange}
                     variant="bordered"
                     placeholder="Organization type"
                     // className="max-w-xs"
@@ -409,7 +371,10 @@ export const Plans = () => {
                     <SelectItem key="Group of Schools" value="Group of Schools">
                       Group of schools
                     </SelectItem>
-                    <SelectItem key="Independent School" value="Independent School">
+                    <SelectItem
+                      key="Independent School"
+                      value="Independent School"
+                    >
                       Independent school
                     </SelectItem>
                   </Select>
@@ -427,18 +392,29 @@ export const Plans = () => {
                   />
                   <Select
                     name="role"
-                 
                     onChange={handleSelectChange}
                     variant="bordered"
                     placeholder="Your role in the school"
                     // className="max-w-xs"
                   >
-                    <SelectItem key="Teacher" value="Teacher">Teacher</SelectItem>
-                    <SelectItem key="Student" value="Student">Student</SelectItem>
-                    <SelectItem key="SchoolAdmin" value="SchoolAdmin">School admin</SelectItem>
-                    <SelectItem key="Principal" value="Principal">Principal</SelectItem>
-                    <SelectItem key="SchoolOwner" value="SchoolOwner">School owner</SelectItem>
-                    <SelectItem key="Parent" value="Parent">Parent</SelectItem>
+                    <SelectItem key="Teacher" value="Teacher">
+                      Teacher
+                    </SelectItem>
+                    <SelectItem key="Student" value="Student">
+                      Student
+                    </SelectItem>
+                    <SelectItem key="SchoolAdmin" value="SchoolAdmin">
+                      School admin
+                    </SelectItem>
+                    <SelectItem key="Principal" value="Principal">
+                      Principal
+                    </SelectItem>
+                    <SelectItem key="SchoolOwner" value="SchoolOwner">
+                      School owner
+                    </SelectItem>
+                    <SelectItem key="Parent" value="Parent">
+                      Parent
+                    </SelectItem>
                   </Select>
                 </ModalBody>
                 <ModalFooter>
@@ -455,7 +431,7 @@ export const Plans = () => {
         </ModalContent>
       </Modal>
       <div className="text-center">
-        <p className="featuretitle text-center p-4">100% Risk-free</p>
+        <p className="badgetex text-center p-4">100% Risk-free</p>
         <p style={{ fontSize: "26px", fontWeight: "600", color: "#75706d" }}>
           Start your journey{" "}
         </p>

@@ -116,7 +116,7 @@ export const LandingCover = () => {
           />
         </CardBody>
         <CardFooter className="flex justify-center text-center">
-          <Button style={{background:"#fff",fontWeight:"600"}}
+          <Button style={{background:"#fff",fontWeight:"600",marginBottom:"10px"}}
             onPress={onOpen}
           >
             Get Started
