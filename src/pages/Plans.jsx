@@ -76,15 +76,9 @@ export const Plans = () => {
         }
       )
       .then(() => {
-        setFormData({
-          name: "",
-          org_type: "",
-          school_name: "",
-          phone_number: "",
-          role: "",
-          selected_plan: ""
-        });
-      
+        setFormData(null);
+      console.log(formData);
+
       }).then(()=>{
         toast.success("Our Team will reach out soon!");
       })

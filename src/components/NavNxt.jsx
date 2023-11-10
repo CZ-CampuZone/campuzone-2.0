@@ -100,9 +100,9 @@ export default function NavNxt() {
           className="row"
         >
           <AcmeLogo />
-          <div className="navtitle">
+          {/* <div className="navtitle">
             <Campu />
-          </div>
+          </div> */}
         </NavbarBrand>
       </NavbarContent>
       {windowWidth > 768 && (
