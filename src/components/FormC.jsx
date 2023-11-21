@@ -10,8 +10,9 @@ import {
 } from "@nextui-org/react";
 import "../components/component.css";
 import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Map } from "./Map";
 
 export const FormC = () => {
   const [selected, setSelected] = useState("");
@@ -24,7 +25,6 @@ export const FormC = () => {
   });
 
   const handleSelectChange = (e) => {
-   
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -32,9 +32,7 @@ export const FormC = () => {
     }));
   };
 
-
   const handleChange = (e) => {
-   
     const { name, value } = e.target;
 
     setFormData((prevData) => ({
@@ -56,36 +54,47 @@ export const FormC = () => {
           }
         }
       )
-      .then(()=>{
+      .then(() => {
         toast.success("Our Team will reach out soon!");
       })
       .catch((error) => {
-       
         toast.error("An error occurred. Please check the form again.");
       });
   };
   return (
     <>
-    <ToastContainer/>
+      <ToastContainer />
       <p className="helptitle text-center p-4">Connect with us</p>
-      <p style={{fontSize:"24px",fontWeight:"500",color:"#de6baf"}} className="text-center p-4">support@campuzone.com</p>
       <p
-        style={{ fontSize: "20px", marginLeft: "50px", marginRight: "50px",textAlign:"center" }}
+        style={{ fontSize: "24px", fontWeight: "500", color: "#de6baf" }}
+        className="text-center p-4"
+      >
+        support@campuzone.com
+      </p>
+      <p
+        style={{
+          fontSize: "20px",
+          marginLeft: "50px",
+          marginRight: "50px",
+          textAlign: "center"
+        }}
         className=" p-5 text-center"
       >
         Our school ERP software is the best in India that enables you to deliver
-        excellent digital experiences to your students, parents, and faculty. 
+        excellent digital experiences to your students, parents, and faculty.
       </p>
-      <div
+     
+      <div className="flex flex-wrap justify-center">
+        <Map />
+        <div
         style={{ marginBottom: "30px" }}
         className="flex flex-wrap justify-center "
       >
         <Card className="formC">
           <CardBody>
-        
             <form onSubmit={handleSubmit}>
               <Input
-              required
+                required
                 type="text"
                 className="p-3"
                 autoFocus
@@ -101,7 +110,7 @@ export const FormC = () => {
               />
 
               <Input
-              required
+                required
                 type="email"
                 className="p-3"
                 autoFocus
@@ -125,11 +134,15 @@ export const FormC = () => {
                 placeholder="Select product"
                 // className="max-w-xs"
               >
-                <SelectItem key="fickle" value="fickle">Fickle</SelectItem>
-                <SelectItem key="erp" value="erp">Campuzone</SelectItem>
+                <SelectItem key="fickle" value="fickle">
+                  Fickle
+                </SelectItem>
+                <SelectItem key="erp" value="erp">
+                  Campuzone
+                </SelectItem>
               </Select>
               <Input
-              required
+                required
                 className="p-3"
                 // endContent={
                 //   <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
@@ -169,6 +182,7 @@ export const FormC = () => {
             </form>
           </CardBody>
         </Card>
+      </div>
       </div>
     </>
   );

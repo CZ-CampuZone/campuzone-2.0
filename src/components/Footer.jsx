@@ -91,7 +91,7 @@ export const Footer = () => {
           </div> */}
         </nav>
         <div class="flex justify-center mt-8 space-x-6">
-          <a
+          <a target="_blank"
             href="hhttps://twitter.com/campuzone3"
             class="text-gray-400 hover:text-gray-500"
           >
@@ -109,7 +109,7 @@ export const Footer = () => {
               />
             </svg>
           </a>
-          <a
+          <a target="_blank"
             href="https://www.instagram.com/campuzone/?hl=en"
             class="text-gray-400 hover:text-gray-500"
           >
@@ -127,7 +127,7 @@ export const Footer = () => {
               />
             </svg>
           </a>
-          <a
+          <a target="_blank"
             href="https://www.facebook.com/adminatcampuzone/"
             class="text-gray-400 hover:text-gray-500"
           >
@@ -147,7 +147,7 @@ export const Footer = () => {
               />
             </svg>
           </a>
-          <a
+          <a target="_blank"
             href="https://www.linkedin.com/company/69466827/admin/"
             class="text-gray-400 hover:text-gray-500"
           >

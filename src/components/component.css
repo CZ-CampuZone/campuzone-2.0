@@ -146,7 +146,7 @@ font-size: 20px;
 }
 
 .helptitle {
-  font-size: 54px;
+  font-size: 48px;
   font-weight: 600;
   color: #75706d;
 }
@@ -170,7 +170,7 @@ font-size: 20px;
 }
 
 .formC {
-  width: 55%;
+  width: 600px;
 }
 
 .image-card {
@@ -309,6 +309,33 @@ font-size: 20px;
   filter: grayscale(100%);
 }
 
+.mapC {
+  width: 500px;
+  height: 500px;
+  margin: 30px;
+
+}
+
+.landcube{
+  position: absolute;
+  width: 100px;
+  right: 250px;
+  top: 230px;
+}
+.landcone{
+  position: absolute;
+  width: 130px;
+  right: 140px;
+  top: 140px;
+}
+.landtoro{
+  position: absolute;
+  width: 130px;
+  right: 140px;
+  top: 140px;
+}
+
+
 /* ---------------------------------------------------------------------------------------------- */
 
 
@@ -381,6 +408,14 @@ font-size: 20px;
     font-weight: 600;
     margin-bottom: 2rem;
   }
+  .mapC {
+    width: 450px;
+    height: 450px;
+    margin: 20px;
+
+  }
+
+  
 }
 
 
@@ -503,13 +538,25 @@ font-size: 20px;
   }
 
   .formC {
-    width: 100%;
+    width: 400px;
+  }
+  .mapC {
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+
   }
 }
 
 @media only screen and (max-device-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
   .formC {
-    width: 100%;
+    width: 300px;
+  }
+  .mapC {
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+
   }
   .sclimg {
     width: 170px;

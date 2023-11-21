@@ -19,6 +19,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import { TypeAnimation } from "react-type-animation";
 import { Select, SelectItem } from "@nextui-org/react";
 import { useState } from "react";
+import cube from "../assets/RoundCubeWhite.png"
+import cone from "../assets/cone.png"
+import toroid from "../assets/SuperToroid.png"
+
+
+
+
+
 export const LandingCover = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [selectedValue, setSelectedValue] = useState("");
@@ -94,6 +102,9 @@ export const LandingCover = () => {
         className="border-none"
       >
         <CardBody className="flex justify-center text-center">
+          {/* <img className="landcube" src={cube}/>
+          <img className="landcone" src={cone}/>
+          <img className="landtoro" src={toroid}/> */}
           <h1 className="title">
             Unlocking Academic
             <br /> Excellence with School ERP

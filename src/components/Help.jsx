@@ -7,7 +7,7 @@ export const Help = () => {
     <div className="helpbox">
       <div className="">
         <p className="helptitle text-center p-2">Still need help? Call us</p>
-        <p className="helptitle text-center p-1">+91 9489475000</p>
+        <p className="helptitle text-center p-2">+91 9489475000  -  +91 9688844205</p>
         <ul  className="flex flex-wrap justify-center">
             <div>
           <li className="flex flex-wrap justify-start items-center">

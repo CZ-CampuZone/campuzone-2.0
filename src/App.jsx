@@ -17,7 +17,6 @@ import { AcmeLogo } from "./components/AcmeLogo";
 import { FormC } from "./components/FormC";
 import { Clients } from "./components/Clients";
 
-
 export const Home = () => {
   return (
     <div>
