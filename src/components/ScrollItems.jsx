@@ -1,11 +1,11 @@
 import { Card, CardBody, Image } from "@nextui-org/react";
 import React from "react";
-import calendar from "../assets/calendars.png";
-import lessonplan from "../assets/lessonplan.png";
-import attendance from "../assets/attendance.png";
-import exam from "../assets/exam.png";
-import fees from "../assets/fees.png";
-import commun from "../assets/commun.png";
+import calendar from "../assets/calendars.webp";
+import lessonplan from "../assets/lessonplan.webp";
+import attendance from "../assets/attendance.webp";
+import exam from "../assets/exam.webp";
+import fees from "../assets/fees.webp";
+import commun from "../assets/commun.webp";
 import Marquee from "react-fast-marquee";
 import "./component.css";
 export const ScrollItems = () => {

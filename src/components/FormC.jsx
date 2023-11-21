@@ -69,7 +69,7 @@ export const FormC = () => {
         style={{ fontSize: "24px", fontWeight: "500", color: "#de6baf" }}
         className="text-center p-4"
       >
-        support@campuzone.com
+        support@campuzone.com & anichadigitalofficial@gmail.com
       </p>
       <p
         style={{
@@ -83,106 +83,125 @@ export const FormC = () => {
         Our school ERP software is the best in India that enables you to deliver
         excellent digital experiences to your students, parents, and faculty.
       </p>
-     
+
       <div className="flex flex-wrap justify-center">
         <Map />
         <div
-        style={{ marginBottom: "30px" }}
-        className="flex flex-wrap justify-center "
-      >
-        <Card className="formC">
-          <CardBody>
-            <form onSubmit={handleSubmit}>
-              <Input
-                required
-                type="text"
-                className="p-3"
-                autoFocus
-                // endContent={
-                //   <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-                // }
-                label="Name*"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Enter your name"
-                variant="bordered"
-              />
+          style={{ marginBottom: "30px" }}
+          className="flex flex-wrap justify-center "
+        >
+          <Card className="formC">
+            <CardBody>
+              <form onSubmit={handleSubmit}>
+                <Input
+                  required
+                  type="text"
+                  className="p-3"
+                  autoFocus
+                  // endContent={
+                  //   <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                  // }
+                  label="Name*"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Enter your name"
+                  variant="bordered"
+                />
 
-              <Input
-                required
-                type="email"
-                className="p-3"
-                autoFocus
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                // endContent={
-                //   <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-                // }
-                label="Email*"
-                placeholder="Enter your email"
-                variant="bordered"
-              />
+                <Input
+                  required
+                  type="email"
+                  className="p-3"
+                  autoFocus
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  // endContent={
+                  //   <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                  // }
+                  label="Email*"
+                  placeholder="Enter your email"
+                  variant="bordered"
+                />
 
-              <Select
-                name="product"
-                required
-                onChange={handleSelectChange}
-                className="p-3"
-                variant="bordered"
-                placeholder="Select product"
-                // className="max-w-xs"
-              >
-                <SelectItem key="fickle" value="fickle">
-                  Fickle
-                </SelectItem>
-                <SelectItem key="erp" value="erp">
-                  Campuzone
-                </SelectItem>
-              </Select>
-              <Input
-                required
-                className="p-3"
-                // endContent={
-                //   <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-                // }
-                name="phone_number"
-                value={formData.phone_number}
-                onChange={handleChange}
-                label="Mobile number*"
-                placeholder="Ex:+917380860567"
-                type="text"
-                variant="bordered"
-              />
-              <Textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                label="Message"
-                placeholder="Enter your message"
-                className="p-3"
-                variant="flat"
-              />
-              <div className="flex flex-wrap justify-center">
-                <Button
-                  type="sumbit"
-                  variant="shadow"
-                  style={{
-                    background: "#d7509d",
-                    color: "#fff",
-                    fontWeight: "500"
-                  }}
-                  fullWidth={false}
-                  className=" p-3"
+                <Select
+                  name="product"
+                  required
+                  onChange={handleSelectChange}
+                  className="p-3"
+                  variant="bordered"
+                  placeholder="Select product"
+                  // className="max-w-xs"
                 >
-                  Send Message
-                </Button>
-              </div>
-            </form>
-          </CardBody>
-        </Card>
+                  <SelectItem key="fickle" value="fickle">
+                    Fickle
+                  </SelectItem>
+                  <SelectItem key="erp" value="erp">
+                    Campuzone
+                  </SelectItem>
+                </Select>
+                <Input
+                  required
+                  className="p-3"
+                  // endContent={
+                  //   <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                  // }
+                  name="phone_number"
+                  value={formData.phone_number}
+                  onChange={handleChange}
+                  label="Mobile number*"
+                  placeholder="Ex:+917380860567"
+                  type="text"
+                  variant="bordered"
+                />
+                <Textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  label="Message"
+                  placeholder="Enter your message"
+                  className="p-3"
+                  variant="flat"
+                />
+                <div className="flex flex-wrap justify-center">
+                  <Button
+                    type="sumbit"
+                    variant="shadow"
+                    style={{
+                      background: "#d7509d",
+                      color: "#fff",
+                      fontWeight: "500"
+                    }}
+                    fullWidth={false}
+                    className=" p-3"
+                  >
+                    Send Message
+                  </Button>
+                </div>
+              </form>
+            </CardBody>
+          </Card>
+        </div>
       </div>
+      <div className="flex flex-wrap justify-center">
+        <div style={{padding:"20px"}}>
+          <p className="locationtitle">Head Office</p>
+          <p className="locationp">
+            Anicha Digital Infrastructure Private Limited, <br />
+            R-4, Krishnasamy Nagar, Vellanoor, Thiruvallur ,<br /> Tamil Nadu –
+            600062.
+          </p>
+        </div>
+        <div style={{padding:"20px"}}>
+          <p className="locationtitle">Incubated At</p>
+          <p className="locationp">
+            Vel Tech TBI , No.42, Vel Tech Road,
+            <br />
+            Vel Nagar, Vellanoor, Avadi,
+            <br /> Tamil Nadu – Thiruvallur, Tamil Nadu – 600062.
+          </p>
+        </div>
       </div>
     </>
   );

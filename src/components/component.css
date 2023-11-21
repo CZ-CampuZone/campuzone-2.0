@@ -29,7 +29,6 @@
 }
 
 .fzcol1 {
-
   margin-top: 12px;
   margin: 15px;
   height: 250px;
@@ -49,10 +48,9 @@
   height: 220px;
   left: 258px;
   top: -205px;
-  
 }
 
-.teacher{
+.teacher {
   width: 245px;
   height: 209px;
   left: 200px;
@@ -60,7 +58,7 @@
   filter: grayscale(100%);
 }
 
-.studentimg{
+.studentimg {
   width: 260px;
   height: auto;
   left: 200px;
@@ -68,7 +66,7 @@
   filter: grayscale(100%);
 }
 
-.parentimg{
+.parentimg {
   width: 220px;
   height: auto;
   left: 225px;
@@ -76,10 +74,10 @@
   filter: grayscale(100%);
 }
 
-.scltxt{
-margin-right: 200px;
-padding: 24px;
-font-size: 20px;
+.scltxt {
+  margin-right: 200px;
+  padding: 24px;
+  font-size: 20px;
 }
 
 .accordion {
@@ -117,7 +115,6 @@ font-size: 20px;
   margin: 20px;
   border-radius: 20px;
   box-shadow: rgba(111, 100, 109, 0.2) 0px 7px 29px 0px;
- 
 }
 .plansbox {
   width: 300px;
@@ -133,7 +130,7 @@ font-size: 20px;
   margin-top: 10%;
 }
 
-.badgetex{
+.badgetex {
   font-size: 54px;
   font-weight: 600;
   color: #75706d;
@@ -174,7 +171,7 @@ font-size: 20px;
 }
 
 .image-card {
-  background:   #f1e7ff;
+  background: #f1e7ff;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -207,10 +204,9 @@ font-size: 20px;
 
 /* -------------------------------------------------------------------------------------------- */
 
-
 .image-card1 {
   display: flex;
-  background:   #ffe9f8;
+  background: #ffe9f8;
   flex-direction: row;
   align-items: center;
   max-width: 480px;
@@ -243,7 +239,7 @@ font-size: 20px;
 /* ------------------------------------------------------------------------- */
 .image-card2 {
   display: flex;
-  background:   #ffe9f8;
+  background: #ffe9f8;
   flex-direction: row;
   align-items: center;
   max-width: 480px;
@@ -274,11 +270,10 @@ font-size: 20px;
   filter: grayscale(100%);
 }
 
-
 /* -------------------------------------------------------------------------------------- */
 .image-card3 {
   display: flex;
-  background:   #f1e7ff;
+  background: #f1e7ff;
   flex-direction: row;
   align-items: center;
   max-width: 480px;
@@ -313,31 +308,58 @@ font-size: 20px;
   width: 500px;
   height: 500px;
   margin: 30px;
-
 }
 
-.landcube{
+.landcube {
   position: absolute;
   width: 100px;
   right: 250px;
   top: 230px;
 }
-.landcone{
+.landcone {
   position: absolute;
   width: 130px;
   right: 140px;
   top: 140px;
 }
-.landtoro{
+.landtoro {
   position: absolute;
   width: 130px;
   right: 140px;
   top: 140px;
 }
 
+.locationtitle {
+  font-size: 24px;
+  font-weight: 500;
+  color: #e477ff;
+}
+.locationp {
+  font-size: 18px;
+}
+
+.featuredsign {
+  max-width: 800px;
+  height: 200px;
+  margin: 0 auto; /* Center the container */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding and border in total width */
+  border-radius: 5px;
+background: linear-gradient(133deg, #FFE4FC 25.67%, #F5E4FF 77.52%);
+}
+
+.insidefeature {
+  width: 100%;
+  padding: 20px;
+
+  box-sizing: border-box;
+}
+
+.featuretitle{
+  font-size: 28px;
+}
 
 /* ---------------------------------------------------------------------------------------------- */
-
 
 @media only screen and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
   .title {
@@ -396,7 +418,7 @@ font-size: 20px;
     font-weight: 500;
   }
 
-  .badgetex{
+  .badgetex {
     font-size: 48px;
     font-weight: 600;
     color: #75706d;
@@ -412,12 +434,8 @@ font-size: 20px;
     width: 450px;
     height: 450px;
     margin: 20px;
-
   }
-
-  
 }
-
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   .title {
@@ -462,7 +480,6 @@ font-size: 20px;
   }
 
   .fzcol1 {
-
     margin-top: 12px;
     margin: 15px;
     height: 225px;
@@ -476,25 +493,23 @@ font-size: 20px;
     width: 450px;
     background: #ffe9f8;
   }
-  
+
   .sclimg {
     width: 170px;
     height: auto;
     left: 212px;
     top: -163px;
-    
   }
-  
-  .teacher{
+
+  .teacher {
     width: 236px;
     height: auto;
     left: 160px;
     top: -160px;
     filter: grayscale(100%);
   }
-  
 
-  .studentimg{
+  .studentimg {
     width: 240px;
     height: auto;
     left: 167px;
@@ -502,23 +517,21 @@ font-size: 20px;
     filter: grayscale(100%);
   }
 
-  
-.parentimg{
-  width: 210px;
-  height: auto;
-  left: 173px;
-  top: -173px;
-  filter: grayscale(100%);
-}
-
-
-  .scltxt{
-  margin-right: 168px;
-  padding: 22px;
-  font-size: 14px;
+  .parentimg {
+    width: 210px;
+    height: auto;
+    left: 173px;
+    top: -173px;
+    filter: grayscale(100%);
   }
 
-  .badgetex{
+  .scltxt {
+    margin-right: 168px;
+    padding: 22px;
+    font-size: 14px;
+  }
+
+  .badgetex {
     font-size: 36px;
     font-weight: 600;
     color: #75706d;
@@ -544,7 +557,6 @@ font-size: 20px;
     width: 300px;
     height: 300px;
     margin: 20px;
-
   }
 }
 
@@ -556,18 +568,15 @@ font-size: 20px;
     width: 300px;
     height: 300px;
     margin: 20px;
-
   }
   .sclimg {
     width: 170px;
     height: auto;
     left: 173px;
     top: -193px;
-    
   }
 
-   
-  .teacher{
+  .teacher {
     width: 220px;
     height: auto;
     left: 123px;
@@ -575,8 +584,7 @@ font-size: 20px;
     filter: grayscale(100%);
   }
 
-  
-  .studentimg{
+  .studentimg {
     width: 214px;
     height: auto;
     left: 143px;
@@ -584,13 +592,11 @@ font-size: 20px;
     filter: grayscale(100%);
   }
 
-  .parentimg{
+  .parentimg {
     width: 210px;
     height: auto;
     left: 136px;
     top: -214px;
     filter: grayscale(100%);
   }
-  
-
 }

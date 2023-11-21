@@ -1,4 +1,3 @@
-
 import "../components/component.css";
 import {
   Admission,
@@ -32,8 +31,8 @@ import {
 } from "@nextui-org/react";
 import React, { useState } from "react";
 import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function Features() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [selectedValue, setSelectedValue] = useState("");
@@ -46,10 +45,7 @@ export default function Features() {
     selected_plan: selectedValue
   });
 
-  
-
   const handleSelectChange = (e) => {
-
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -68,7 +64,7 @@ export default function Features() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     axios
       .post(
         "https://devczerpbackend.anichadigitalinfra.com/api/services/school_form",
@@ -88,15 +84,14 @@ export default function Features() {
           role: "",
           selected_plan: ""
         });
-      
-      }).then(()=>{
+      })
+      .then(() => {
         toast.success("Our Team will reach out soon!");
       })
       .catch((error) => {
-       
         toast.error("An error occurred. Please try again.");
       });
-    }
+  };
   const allCards = [
     {
       svg: <Role />,
@@ -197,22 +192,13 @@ export default function Features() {
 
   return (
     <>
-    <ToastContainer/>
+      <ToastContainer />
       <>
         <p className="helptitle text-center p-4">
           Check all full-fledged <br />
           Campuzone features
         </p>
-        <div className="flex flex-wrap justify-center p-4">
-          {" "}
-          <Button
-            onPress={onOpen}
-            variant="shadow"
-            style={{background: "#B86CFF", color: "#fff", fontWeight: "500" }}
-          >
-            Get Started
-          </Button>
-        </div>
+
         <div className="flex flex-wrap justify-center">
           {allCards.map((item, index) => (
             <>
@@ -240,117 +226,155 @@ export default function Features() {
           placement="top-center"
         >
           <ModalContent>
-          {(onClose) => (
-            <>
-              <form onSubmit={handleSubmit}>
-                <ModalHeader className="flex flex-col gap-1">
-                  Get Started
-                </ModalHeader>
-                <ModalBody>
-                  <Select
-                    name="selected_plan"
-                    value={selectedValue}
-                    onChange={handleSelectChange}
-                    variant="bordered"
-                    color="secondary"
-                    label="Favorite Plan"
-                    placeholder="Select a Plan"
-                    // className="max-w-xs"
-                  >
-                    <SelectItem key="Demo" value="Demo">
-                      Free demo
-                    </SelectItem>
-                    <SelectItem key="Basic" value="Basic">
-                      Basic plan
-                    </SelectItem>
-                    <SelectItem key="Pro" value="Pro">
-                      Pro plan
-                    </SelectItem>
-                  </Select>
+            {(onClose) => (
+              <>
+                <form onSubmit={handleSubmit}>
+                  <ModalHeader className="flex flex-col gap-1">
+                    Get Started
+                  </ModalHeader>
+                  <ModalBody>
+                    <Select
+                      name="selected_plan"
+                      value={selectedValue}
+                      onChange={handleSelectChange}
+                      variant="bordered"
+                      color="secondary"
+                      label="Favorite Plan"
+                      placeholder="Select a Plan"
+                      // className="max-w-xs"
+                    >
+                      <SelectItem key="Demo" value="Demo">
+                        Free demo
+                      </SelectItem>
+                      <SelectItem key="Basic" value="Basic">
+                        Basic plan
+                      </SelectItem>
+                      <SelectItem key="Pro" value="Pro">
+                        Pro plan
+                      </SelectItem>
+                    </Select>
 
-                  <Input
-                    // endContent={
-                    //   <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-                    // }
-                    className="form-control"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    label="Name"
-                    placeholder="Enter your name"
-                    type="text"
-                    variant="bordered"
-                  />
-                  <Input
-                    // endContent={
-                    //   <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-                    // }
-                    name="school_name"
-                    value={formData.school_name}
-                    onChange={handleChange}
-                    label="School name"
-                    placeholder="Enter school your name"
-                    type="text"
-                    variant="bordered"
-                  />
-                  <Select
-                    name="org_type"
-                    value={formData.org_type}
-                    onChange={handleSelectChange
-                    }
-                    variant="bordered"
-                    placeholder="Organization type"
-                    // className="max-w-xs"
-                  >
-                    <SelectItem key="Group of Schools" value="Group of Schools">
-                      Group of schools
-                    </SelectItem>
-                    <SelectItem key="Independent School" value="Independent School">
-                      Independent school
-                    </SelectItem>
-                  </Select>
-                  <Input
-                    // endContent={
-                    //   <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-                    // }
-                    label="Mobile number"
-                    placeholder="Ex:+917380860567"
-                    type="text"
-                    variant="bordered"
-                    name="phone_number"
-                    value={formData.phone_number}
-                    onChange={handleChange}
-                  />
-                  <Select
-                    name="role"
-                 
-                    onChange={handleSelectChange}
-                    variant="bordered"
-                    placeholder="Your role in the school"
-                    // className="max-w-xs"
-                  >
-                    <SelectItem key="Teacher" value="Teacher">Teacher</SelectItem>
-                    <SelectItem key="Student" value="Student">Student</SelectItem>
-                    <SelectItem key="SchoolAdmin" value="SchoolAdmin">School admin</SelectItem>
-                    <SelectItem key="Principal" value="Principal">Principal</SelectItem>
-                    <SelectItem key="SchoolOwner" value="SchoolOwner">School owner</SelectItem>
-                    <SelectItem key="Parent" value="Parent">Parent</SelectItem>
-                  </Select>
-                </ModalBody>
-                <ModalFooter>
-                  <Button color="default" variant="flat" onPress={onClose}>
-                    Close
-                  </Button>
-                  <Button type="submit" color="secondary" onPress={onClose}>
-                    Send
-                  </Button>
-                </ModalFooter>
-              </form>
-            </>
-          )}
-        </ModalContent>
+                    <Input
+                      // endContent={
+                      //   <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                      // }
+                      className="form-control"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      label="Name"
+                      placeholder="Enter your name"
+                      type="text"
+                      variant="bordered"
+                    />
+                    <Input
+                      // endContent={
+                      //   <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                      // }
+                      name="school_name"
+                      value={formData.school_name}
+                      onChange={handleChange}
+                      label="School name"
+                      placeholder="Enter school your name"
+                      type="text"
+                      variant="bordered"
+                    />
+                    <Select
+                      name="org_type"
+                      value={formData.org_type}
+                      onChange={handleSelectChange}
+                      variant="bordered"
+                      placeholder="Organization type"
+                      // className="max-w-xs"
+                    >
+                      <SelectItem
+                        key="Group of Schools"
+                        value="Group of Schools"
+                      >
+                        Group of schools
+                      </SelectItem>
+                      <SelectItem
+                        key="Independent School"
+                        value="Independent School"
+                      >
+                        Independent school
+                      </SelectItem>
+                    </Select>
+                    <Input
+                      // endContent={
+                      //   <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                      // }
+                      label="Mobile number"
+                      placeholder="Ex:+917380860567"
+                      type="text"
+                      variant="bordered"
+                      name="phone_number"
+                      value={formData.phone_number}
+                      onChange={handleChange}
+                    />
+                    <Select
+                      name="role"
+                      onChange={handleSelectChange}
+                      variant="bordered"
+                      placeholder="Your role in the school"
+                      // className="max-w-xs"
+                    >
+                      <SelectItem key="Teacher" value="Teacher">
+                        Teacher
+                      </SelectItem>
+                      <SelectItem key="Student" value="Student">
+                        Student
+                      </SelectItem>
+                      <SelectItem key="SchoolAdmin" value="SchoolAdmin">
+                        School admin
+                      </SelectItem>
+                      <SelectItem key="Principal" value="Principal">
+                        Principal
+                      </SelectItem>
+                      <SelectItem key="SchoolOwner" value="SchoolOwner">
+                        School owner
+                      </SelectItem>
+                      <SelectItem key="Parent" value="Parent">
+                        Parent
+                      </SelectItem>
+                    </Select>
+                  </ModalBody>
+                  <ModalFooter>
+                    <Button color="default" variant="flat" onPress={onClose}>
+                      Close
+                    </Button>
+                    <Button type="submit" color="secondary" onPress={onClose}>
+                      Send
+                    </Button>
+                  </ModalFooter>
+                </form>
+              </>
+            )}
+          </ModalContent>
         </Modal>
-      
+        <div className="featuredsign">
+          <div className="insidefeature">
+            <div className="text-center">
+              <p className="featuretitle">
+                Start your free demo account today!
+              </p>
+            </div>
+            <div className="flex flex-wrap justify-center p-4">
+              {" "}
+              <Button
+                onPress={onOpen}
+                variant="shadow"
+                style={{
+                  background: "#B86CFF",
+                  color: "#fff",
+                  fontWeight: "500"
+                }}
+              >
+                Get Started
+              </Button>
+            </div>
+          </div>
+        </div>
       </>
     </>
   );
