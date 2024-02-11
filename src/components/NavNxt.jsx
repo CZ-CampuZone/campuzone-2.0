@@ -49,7 +49,6 @@ export default function NavNxt() {
       name: "Connect",
       path: "campuzone-connect"
     }
-    
   ];
 
   const icons = {
@@ -115,7 +114,16 @@ export default function NavNxt() {
               }}
               isActive
             >
-              <p style={{ color: "#D33591", cursor: "pointer",fontSize:"16px",":hover":{color:"#7828C8"} }}>Home</p>
+              <p
+                style={{
+                  color: "#D33591",
+                  cursor: "pointer",
+                  fontSize: "16px",
+                  ":hover": { color: "#7828C8" }
+                }}
+              >
+                Home
+              </p>
             </NavbarItem>
             {/* <Dropdown>
               <NavbarItem>
@@ -188,7 +196,15 @@ export default function NavNxt() {
               }}
               isActive
             >
-              <p style={{ color: "#D33591", cursor: "pointer",fontSize:"16px" }}>Features</p>
+              <p
+                style={{
+                  color: "#D33591",
+                  cursor: "pointer",
+                  fontSize: "16px"
+                }}
+              >
+                Features
+              </p>
             </NavbarItem>
             <NavbarItem
               onClick={() => {
@@ -197,7 +213,15 @@ export default function NavNxt() {
               }}
               isActive
             >
-              <p style={{ color: "#D33591", cursor: "pointer",fontSize:"16px" }}>Plans</p>
+              <p
+                style={{
+                  color: "#D33591",
+                  cursor: "pointer",
+                  fontSize: "16px"
+                }}
+              >
+                Plans
+              </p>
             </NavbarItem>
             <NavbarItem
               onClick={() => {
@@ -206,15 +230,40 @@ export default function NavNxt() {
               }}
               isActive
             >
-              <p style={{ color: "#D33591", cursor: "pointer",fontSize:"16px" }}>Connect</p>
+              <p
+                style={{
+                  color: "#D33591",
+                  cursor: "pointer",
+                  fontSize: "16px"
+                }}
+              >
+                Connect
+              </p>
             </NavbarItem>
             <NavbarItem>
               <Link
-                style={{ color: "#7828C8", cursor: "pointer",fontSize:"16px" }}
+                style={{
+                  color: "#7828C8",
+                  cursor: "pointer",
+                  fontSize: "16px"
+                }}
                 target="_blank"
                 href="https://news.campuzone.com/"
               >
                 News
+              </Link>
+            </NavbarItem>
+            <NavbarItem>
+              <Link
+                style={{
+                  color: "#7828C8",
+                  cursor: "pointer",
+                  fontSize: "16px"
+                }}
+                target="_blank"
+                href="https://tally.so/r/3174dL"
+              >
+                Internship
               </Link>
             </NavbarItem>
           </NavbarContent>
@@ -222,7 +271,13 @@ export default function NavNxt() {
       )}
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button as={Link} color="secondary" target="_blank" href="https://devczerp.anichadigitalinfra.com/" variant="shadow">
+          <Button
+            as={Link}
+            color="secondary"
+            target="_blank"
+            href="https://devczerp.anichadigitalinfra.com/"
+            variant="shadow"
+          >
             Sign Up
           </Button>
         </NavbarItem>
@@ -232,11 +287,12 @@ export default function NavNxt() {
           <>
             {menuItems.map((item, index) => (
               <NavbarMenuItem key={`${item}-${index}`}>
-                <p style={{ ":hover": { color: "#D33591" },fontSize:"20px"}}
+                <p
+                  style={{ ":hover": { color: "#D33591" }, fontSize: "20px" }}
                   onClick={() => {
                     navigate(item.path);
-                    setIsMenuOpen(false); 
-                    window.scrollTo(0, 0);// Close the navbar
+                    setIsMenuOpen(false);
+                    window.scrollTo(0, 0); // Close the navbar
                   }}
                   className="w-full"
                 >
@@ -254,7 +310,6 @@ export default function NavNxt() {
                 News
               </Link>
             </NavbarMenuItem>
-           
           </>
         </NavbarMenu>
       )}

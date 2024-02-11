@@ -16,6 +16,7 @@ import { Help } from "./components/Help";
 import { AcmeLogo } from "./components/AcmeLogo";
 import { FormC } from "./components/FormC";
 import { Clients } from "./components/Clients";
+import { Internship } from "./pages/Internship";
 
 export const Home = () => {
   return (
@@ -62,6 +63,7 @@ function App() {
           <Route path="/campuzone-features" element={<Features />} />
           <Route path="/campuzone-plans" element={<Plans />} />
           <Route path="/campuzone-connect" element={<FormC />} />
+          <Route path="/internship" element={<Internship />} />
         </Routes>
         <Footer />
       </NextUIProvider>
